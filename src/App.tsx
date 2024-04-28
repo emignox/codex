@@ -7,7 +7,6 @@ import {
 import Model from "./Ocean1.tsx";
 import { Suspense } from "react";
 import Sound from "./sound";
-import Rain from "./rain";
 
 const getTimePreset = () => {
   const hour = new Date().getHours();
@@ -17,7 +16,7 @@ const getTimePreset = () => {
   } else if (hour >= 12 && hour < 21) {
     return "sunset";
   } else {
-    return "night";
+    return "forest";
   }
 };
 
@@ -27,7 +26,10 @@ const App = () => {
   return (
     <>
       <div className="w-screen h-screen overflow-hidden">
-        <Sound />
+        {timePreset === "forest" && <Sound className="text-white " />}
+        <div className="absolute z-10 text-3xl text-white opacity-30 left-96 top-96">
+          <h1>hello world</h1>
+        </div>
         <Canvas className="w-full h-full">
           <Suspense fallback={null}>
             <ambientLight intensity={1} />
@@ -41,7 +43,6 @@ const App = () => {
             />
             <Model />
             <Environment preset={timePreset} />
-            <Rain count={1000} />
           </Suspense>
         </Canvas>
       </div>

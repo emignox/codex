@@ -1,7 +1,10 @@
+@import url("https://fonts.cdnfonts.com/css/guardhouse");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   background-color: #282c34;
+  font-family: "Guardhouse", serif;
 }

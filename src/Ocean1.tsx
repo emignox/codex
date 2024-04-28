@@ -8,6 +8,8 @@ import { useThree } from "@react-three/fiber";
 import { TextureLoader, RepeatWrapping, PlaneGeometry, Vector3 } from "three";
 import { Water } from "three-stdlib";
 import { Stars } from "@react-three/drei";
+import Moon from "./luna";
+
 // import { MeshPhongMaterial } from "three";
 
 // ...
@@ -35,14 +37,6 @@ export default function Model(props: PropsWithChildren<ModelProps>) {
     texture.wrapS = texture.wrapT = RepeatWrapping;
   });
 
-  // Crea un materiale personalizzato per l'acqua
-  // const waterMaterial = new MeshPhongMaterial({
-  //   map: colorMap, // Usa la mappa di colore
-  //   normalMap: waterNormals,
-  //   alphaTest: 0.5,
-  //   transparent: true,
-  // });
-
   const water = new Water(new PlaneGeometry(10000, 10000), {
     textureWidth: 500, // Aumenta la risoluzione della texture
     textureHeight: 500, // Aumenta la risoluzione della texture
@@ -51,7 +45,7 @@ export default function Model(props: PropsWithChildren<ModelProps>) {
     sunDirection: new Vector3(0, 0, 0),
     sunColor: parseInt("FFA500", 16),
     waterColor: 0x000033, // Blu molto scuro
-    distortionScale: 3, // Onde più grandi
+    distortionScale: 15, // Onde più grandi
     fog: scene.fog !== undefined,
   });
 
@@ -94,13 +88,6 @@ export default function Model(props: PropsWithChildren<ModelProps>) {
           position={[-0.129, 14.245, 0.381]}
           rotation={[0.908, 0.421, 2.66]}
         />
-        {/* <mesh
-          name="Piano"
-          geometry={(nodes.Piano as Mesh).geometry}
-          material={materials.Materiale}
-          position={[-0.908, 8.778, 0.868]}
-          scale={[500.24, 1, 500.24]}
-        /> */}
         <primitive object={water} />
 
         <mesh
@@ -116,11 +103,15 @@ export default function Model(props: PropsWithChildren<ModelProps>) {
         inclination={1} // 0 = sunrise, 0.5 = zenith, 1 = sunset
         azimuth={10} // Sun rotation around the Y axis
       />
+      {timePreset[0] === 0 && timePreset[1] === 0 && timePreset[2] === 0 && (
+        <Moon />
+      )}
+
       <Stars
-        radius={1000}
+        radius={500}
         depth={50}
-        count={1000}
-        factor={2}
+        count={5000}
+        factor={10}
         saturation={100}
         fade
       />
