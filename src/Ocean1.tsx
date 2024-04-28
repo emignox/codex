@@ -31,12 +31,9 @@ export default function Model(props: PropsWithChildren<ModelProps>) {
   // const colorMap = loader.load("../public/water.jpg");
 
   // Carica la mappa delle normali
-  const waterNormals = loader.load(
-    "../public/waternormals.jpg",
-    function (texture) {
-      texture.wrapS = texture.wrapT = RepeatWrapping;
-    }
-  );
+  const waterNormals = loader.load("/waternormals.jpg", function (texture) {
+    texture.wrapS = texture.wrapT = RepeatWrapping;
+  });
 
   // Crea un materiale personalizzato per l'acqua
   // const waterMaterial = new MeshPhongMaterial({
