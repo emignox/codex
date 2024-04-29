@@ -28,16 +28,16 @@ const Sound: FC<SoundProps> = ({ className }) => {
     <div
       className={`fixed z-10 text-3xl text-black top-3 left-2  ${className}`}
     >
-      <button onClick={toggle}>
+      <button className="flex items-center justify-center " onClick={toggle}>
         {playing ? (
           <>
             {" "}
-            <FaPause /> <p>Stop The Sound</p>
+            <FaPause /> <p className="pl-2 text-sm">Stop The Sound</p>
           </>
         ) : (
           <>
             <FaPlay />
-            <p>Active The Sound</p>
+            <p className="pl-2 text-sm">Active The Sound</p>
           </>
         )}{" "}
       </button>
