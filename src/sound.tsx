@@ -26,12 +26,11 @@ const Sound: FC<SoundProps> = ({ className }) => {
 
   return (
     <div
-      className={`fixed z-10 text-3xl text-black top-3 left-2  ${className}`}
+      className={`fixed z-10 text-3xl text-white top-3 left-2 flex justify-between items-center w-full ${className}`}
     >
-      <button className="flex items-center justify-center " onClick={toggle}>
+      <button className="flex items-center justify-center" onClick={toggle}>
         {playing ? (
           <>
-            {" "}
             <FaPause /> <p className="pl-2 text-sm">Stop The Sound</p>
           </>
         ) : (
@@ -39,7 +38,10 @@ const Sound: FC<SoundProps> = ({ className }) => {
             <FaPlay />
             <p className="pl-2 text-sm">Active The Sound</p>
           </>
-        )}{" "}
+        )}
+      </button>
+      <button className="px-4 py-3 mr-3 text-sm text-center duration-500 transform bg-black border border-white rounded-full w-44 hover:text-black hover:bg-white">
+        Go to my Portfolio
       </button>
     </div>
   );

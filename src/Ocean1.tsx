@@ -59,7 +59,7 @@ export default function Model(props: PropsWithChildren<ModelProps>) {
         14.245 + Math.sin(clock.getElapsedTime()) * 0.5;
     }
     if (cylinderMesh.current) {
-      cylinderMesh.current.rotation.y += 0.01;
+      cylinderMesh.current.rotation.y += 0.001;
     }
     water.material.uniforms["time"].value += 1.0 / 60.0;
   });

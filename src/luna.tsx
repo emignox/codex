@@ -25,7 +25,7 @@ function Moon() {
           shininess: 0,
         });
 
-        const moonSize = 300;
+        const moonSize = 100;
         const moonGeometry = new SphereGeometry(moonSize, 32, 32);
         setMoonMesh(new Mesh(moonGeometry, moonMaterial));
       });

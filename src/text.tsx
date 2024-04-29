@@ -32,9 +32,10 @@ const Text: FC<TextProps> = ({ className }) => {
   return (
     <div
       style={{ opacity: opacity, transition: "opacity 1s ease-in-out" }}
-      className={`${className} absolute z-10 text-white left-96 top-96 w-1/2 text-sm`}
+      className={`${className} absolute z-10 bottom-0 left-1/2 transform -translate-x-1/2 lg:text-lg   text-center
+       mb-52 md:mb-40 lg:mb-60 xl:mb-72 2xl:mb-96 text-white text-sm`}
     >
-      <h1>{touchingText[currentIndex]}</h1>
+      <h1 className="">{touchingText[currentIndex]}</h1>
     </div>
   );
 };
