@@ -7,6 +7,7 @@ import {
 import Model from "./Ocean1.tsx";
 import { Suspense } from "react";
 import Sound from "./sound";
+import Text from "./text";
 
 const getTimePreset = () => {
   const hour = new Date().getHours();
@@ -26,10 +27,10 @@ const App = () => {
   return (
     <>
       <div className="w-screen h-screen overflow-hidden">
-        {timePreset === "forest" && <Sound className="text-white " />}
-        {/* <div className="absolute z-10 text-3xl text-white opacity-30 left-96 top-96">
-          <h1>hello world</h1>
-        </div> */}
+        {(timePreset === "forest" && <Sound className="text-white " />) || (
+          <Sound />
+        )}
+        <Text className="text-white" />
         <Canvas className="w-full h-full">
           <Suspense fallback={null}>
             <ambientLight intensity={1} />

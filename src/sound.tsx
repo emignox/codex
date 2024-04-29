@@ -28,7 +28,19 @@ const Sound: FC<SoundProps> = ({ className }) => {
     <div
       className={`fixed z-10 text-3xl text-black top-3 left-2  ${className}`}
     >
-      <button onClick={toggle}>{playing ? <FaPause /> : <FaPlay />}</button>
+      <button onClick={toggle}>
+        {playing ? (
+          <>
+            {" "}
+            <FaPause /> <p>Stop The Sound</p>
+          </>
+        ) : (
+          <>
+            <FaPlay />
+            <p>Active The Sound</p>
+          </>
+        )}{" "}
+      </button>
     </div>
   );
 };
