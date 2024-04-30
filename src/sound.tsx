@@ -40,12 +40,12 @@ const Sound: FC<SoundProps> = ({ className }) => {
           </>
         )}
       </button>
-      <button className="px-4 py-3 mr-3 text-sm text-center duration-500 transform bg-black border border-white rounded-full w-44 hover:text-black hover:bg-white">
-        <a target="blanck_" href="https://emignox.github.io/portfolio/">
+      <a target="blanck_" href="https://emignox.github.io/portfolio/">
+        <button className="px-4 py-3 mr-3 text-sm text-center duration-500 transform bg-black border border-white rounded-full w-44 hover:text-black hover:bg-white">
           {" "}
           Go to my Portfolio
-        </a>{" "}
-      </button>
+        </button>
+      </a>
     </div>
   );
 };
