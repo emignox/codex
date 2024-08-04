@@ -40,7 +40,7 @@ function Moon() {
 
   if (!moonMesh) return null;
 
-  return <primitive object={moonMesh} position={[2100, 250, 20]} />;
+  return <primitive object={moonMesh} position={[1200, 200, 1]} />;
 }
 
 export default Moon;

@@ -52,11 +52,16 @@ const App = () => {
             <ambientLight intensity={1} />
             <PerspectiveCamera makeDefault position={[0, 15.245, 50]} />
             <OrbitControls
-              enableRotate={false}
+              enableRotate={true}
+              rotateSpeed={0.2}
               autoRotate
               autoRotateSpeed={0.3}
               minDistance={50}
               maxDistance={100}
+              maxAzimuthAngle={Math.PI / 2}
+              minAzimuthAngle={-Math.PI / 2}
+              maxPolarAngle={Math.PI / 2 - 0.1}
+              minPolarAngle={0}
             />
             <Model />
             <Environment preset={timePreset} />
